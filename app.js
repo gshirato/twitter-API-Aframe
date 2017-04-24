@@ -1,12 +1,14 @@
-var twit = require('twit');
-var config = require('./config.js');
-var Twitter = new twit(config);
-/*
 //For parameters in params
 var app = require('http').createServer(handler),
 	io = require('socket.io').listen(app),
 	fs = require('fs');
 app.listen(1994);
+
+
+var twit = require('twit');
+var config = require('./config.js');
+var Twitter = new twit(config);
+
 
 function handler(req,res){
 	fs.readFile(__dirname+'/index.html',function(err,data){
@@ -19,7 +21,7 @@ function handler(req,res){
 		res.end();
 	});
 }
-*/
+
 var word = '#france'
 var cparams = 3;
 
@@ -28,7 +30,7 @@ var cparams = 3;
 var pos = io.of('/pos').on('connection',function(socket){
 */
 
-	var expdata_Pos = function()
+	function expdata_Pos()
 	{
 		var params = {
 			q: word + ' :)',
@@ -82,7 +84,7 @@ var pos = io.of('/pos').on('connection',function(socket){
 							soccket.emit('efs', databox_p);
 						}
 					}
-				}
+				
 
 			}
 			else
@@ -100,7 +102,7 @@ var pos = io.of('/pos').on('connection',function(socket){
 var neg = io.of('/neg').on('connection',function(socket){
 */
 
-	var expdata_Neg = function()
+	function expdata_Neg()
 	{
 		var params = {
 			q: word + ' :(',
@@ -153,7 +155,7 @@ var neg = io.of('/neg').on('connection',function(socket){
 							createCosmos(databox_n.fav, databox_n.rt, databox_n.followers, 'neg');
 							soccket.emit('efs', databox_n);
 						}
-					}
+					
 				}
 
 			}
@@ -197,7 +199,6 @@ function geneCosmos(fav, rt, followers, type)
 			star.setAttribute('color','#0000FF');
 		}
 		star.setAttribute('radius',score);
-		star.setAttribute('look-at', '#target');
 		radius1 = 700;
 		let y = radius1 * Math.sin(deg2rad(theta1));
 		radius2 = radius1 * Math.cos(deg2rad(theta1));
