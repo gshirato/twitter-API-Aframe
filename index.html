@@ -5,23 +5,14 @@
 	<meta charset="utf-8">
 	<title>twitUni</title>
 	<script src="./lib/aframe.js"></script>
-	<script src="sub.js"></script>
 	<script src="Utils.js"></script>
-	<script src="posneg.js"></script>
+	<script src="app.js"></script>
 </head>
-<!-- body onload="init()" -->
-<body>
+<body onload="init()">
 <a-scene>
-	<a-assets> <!--img id="star" src="star.png"--></a-assets>
-	<a-camera position="0 0 0"></a-camera>
-	<!-- Test -->
-	<a-sphere name="s1" position="0 3 3"></a-sphere>
-	<a-sphere name="s2" position="3 0 3"></a-sphere>
-	<a-sphere name="s3" position="3 3 0"></a-sphere>
-	<a-sphere name="s4" position="0 0 3"></a-sphere>
-	<a-sphere name="s5" position="3 3 3"></a-sphere>
+	<a-assets></a-assets>
+	<a-camera position="0 -3 0"></a-camera>
 	<a-light color: '#DD00DD'></a-light>
-	<a-sphere id="target" color="#000" radius="0.1"></a-sphere>
 	<a-sky color="#000"></a-sky>
 </a-scene>
 </body>
