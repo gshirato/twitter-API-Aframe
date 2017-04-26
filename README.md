@@ -1,7 +1,7 @@
 
 
 
-# Project name: #Twitter Cosmos
+# Project name: Twitter Cosmos
 
 Do you want to know:  
 Is this hashtag filled with positive tweets or negative ones ?  
@@ -18,7 +18,7 @@ You can visualize them by creating an universe of the hashtag !
 npm install twit
 ```
 
-2 - Make config.js for twitter API configuration (see [⚙ Configuration](#⚙ Configuration))
+2 - Make config.js for twitter API configuration (see ⚙ Configuration)
 
 Your project directory looks like
 ```bash
