@@ -3,11 +3,11 @@
 
 # Project name: Twitter Cosmos
 
-Do you want to know:  
+When you are using twitter, you may be wondering:
 Is this hashtag filled with positive tweets or negative ones ?  
 Might it be influential or just tweeted by anonymous people ?  
 
-You can visualize them by creating an universe of the hashtag !
+You can visualize them by creating an universe of the tweets !
 
 
 ## 🌍 Installation
