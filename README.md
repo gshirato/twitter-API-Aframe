@@ -9,6 +9,10 @@ Might it be influential or just tweeted by anonymous people ?
 
 You can visualize them by creating an universe of the tweets !
 
+This project must have been visualized like this:
+![demo](./photos/demo.png "demo")  
+On average, we can see more and bigger positive stars(red) than negative ones(blue).
+Imagine you are surrounded by every star that changes its size in real time.
 
 ## 🌍 Installation
 
