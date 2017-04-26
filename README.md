@@ -11,8 +11,10 @@ You can visualize them by creating an universe of the tweets !
 
 This project must have been visualized like this:
 ![demo](./photos/demo.png "demo")  
-On average, we can see more and bigger positive stars(red) than negative ones(blue).
+Here, we can see more and bigger red stars which represent positive tweets than blue ones which represent negative tweets.
 Imagine you are surrounded by every star that changes its size in real time.
+
+
 
 ## 🌍 Installation
 
@@ -51,6 +53,8 @@ node app.js
 
 
 _It does not work till now_
+
+__You can see how stars create an universe in 'demo' directory now.__
 
 
 ## ⚙ Configuration
