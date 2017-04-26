@@ -3,7 +3,7 @@
 
 # Project name: Twitter Cosmos
 
-When you are using twitter, you may be wondering:
+When you are using twitter, you may be wondering:  
 Is this hashtag filled with positive tweets or negative ones ?  
 Might it be influential or just tweeted by anonymous people ?  
 
