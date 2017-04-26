@@ -1,18 +1,36 @@
-<!doctype html>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>twitUni</title>
+	<title>COSMOS</title>
 	<script src="./lib/aframe.js"></script>
 	<script src="Utils.js"></script>
-	<script src="app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	
+
 </head>
-<body onload="init()">
-<a-scene>
-	<a-assets></a-assets>
+<body>
+	<script>
+		$(function(){
+			var cosm = io.connect('http://127.0.0.1:1994/cosm')
+			$('#myForm').submit(function(e){
+				//e.preventDefault();
+				cosm.json.emit('emit_from_client',{
+					ex: 3; 
+				});
+			});
+			cosm.on('efs_p',function(data){
+				$('#scene').append($('<a-sphere>').radius(data.followers));
+			});
+		});
+	</script>
+
+<a-scene id="scene" class="sample">
 	<a-camera position="0 -3 0"></a-camera>
 	<a-sky color="#DDDDDD"></a-sky>
 </a-scene>
+
 </body>
 </html>

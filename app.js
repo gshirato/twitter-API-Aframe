@@ -25,12 +25,15 @@ function handler(req,res){
 var word = '#france'
 var cparams = 3;
 
-//Les données partagées
-/*
-var pos = io.of('/pos').on('connection',function(socket){
-*/
 
-	function expdata_Pos()
+
+/*
+imgName: ID of image
+sizez, sizey
+r_min, r_max: min/max of radius
+num: number of images
+*/
+function expdata_Pos()
 	{
 		var params = {
 			q: word + ' :)',
@@ -81,7 +84,7 @@ var pos = io.of('/pos').on('connection',function(socket){
 							databox_p.rt = data.statuses[i].retweet_count;
 							databox_p.followers = data.statuses[i].user.followers_count;
 							createCosmos(databox_p.fav,databox_p.rt,databox_p.followers,'pos');
-							soccket.emit('efs', databox_p);
+							soccket.emit('efs_p', databox_p);
 						}
 					}
 				
@@ -96,13 +99,8 @@ var pos = io.of('/pos').on('connection',function(socket){
 
 
 	}
-/*	
-})
 
-var neg = io.of('/neg').on('connection',function(socket){
-*/
-
-	function expdata_Neg()
+function expdata_Neg()
 	{
 		var params = {
 			q: word + ' :(',
@@ -153,7 +151,7 @@ var neg = io.of('/neg').on('connection',function(socket){
 							databox_n.rt = data.statuses[i].retweet_count;
 							databox_n.followers = data.statuses[i].user.followers_count;
 							createCosmos(databox_n.fav, databox_n.rt, databox_n.followers, 'neg');
-							soccket.emit('efs', databox_n);
+							soccket.emit('efs_n', databox_n);
 						}
 					
 				}
@@ -167,17 +165,7 @@ var neg = io.of('/neg').on('connection',function(socket){
 		});
 
 
-	}
-/*
-})
-*/
-/*
-imgName: ID of image
-sizez, sizey
-r_min, r_max: min/max of radius
-num: number of images
-*/
-
+}
 
 function geneCosmos(fav, rt, followers, type)
 {
@@ -221,3 +209,10 @@ function init()
 	setup();
 }
 
+//Les données partagées
+
+var cosm = io.of('/cosm').on('connection',function(socket){
+
+	init();
+
+})

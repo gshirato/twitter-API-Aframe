@@ -10,6 +10,7 @@
   "author": "Gota SHIRATO",
   "license": "ISC",
   "dependencies": {
+    "socket.io": "^1.7.3",
     "twit": "^2.2.5"
   },
   "devDependencies": {},
