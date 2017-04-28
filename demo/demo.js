@@ -1,5 +1,4 @@
 
-
 function geneCosmos(fav, rt, followers, type)
 {
 	let theta1, theta2;
@@ -40,12 +39,11 @@ function geneCosmos(fav, rt, followers, type)
 		let _z = -10 + z/mag;
 		let _str = String(_x)+ " " + String(_y)+ " " + String(_z);
 		anim.setAttribute('to',_str);
-		anim.setAttribute('repeat','indefinite');
-		anim.setAttribute('dur', 3000);
+		anim.setAttribute('repeat',1);
+		anim.setAttribute('dur', 1000);
 		anim.setAttribute('easing','ease-in-out');
-		anim.setAttribute('direction','reverse');
-		anim.setAttribute('fill','none');
-
+		anim.setAttribute('direction','normal');
+		anim.setAttribute('fill','both');
 
 		scene.appendChild(star);
 		star.appendChild(anim);
@@ -56,24 +54,22 @@ function geneCosmos(fav, rt, followers, type)
 		anim2.setAttribute('to','0 360 0');
 		anim2.setAttribute('repeat','indefinite');
 		anim2.setAttribute('dur', 20000);
-		anim2.setAttribute('easing','ease-cubic');
 
-		//target.appendChild(anim2);
-		
 }
 
 
 function setup()
 {
-	for(var i = 0; i < 500; i++)
+	for(var i = 0; i < 100; i++)
 	{
 		geneCosmos(random(0,50), random(0,40), random(0,500), 0);
 	}
-	for(var i = 0; i < 300; i++)
+	for(var i = 0; i < 30; i++)
 	{
 		geneCosmos(random(0,30), random(0,30), random(0,500), 1);
 	}
 }
+
 
 function init()
 {
