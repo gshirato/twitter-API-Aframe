@@ -56,6 +56,18 @@ _It does not work till now_
 
 __You can see how stars create an universe in 'demo' directory now.__
 
+1 - Put demo.js and index.html in demo directory.
+
+```bash
+├── demo
+│   ├── demo.js
+│   └── index.html
+├── Utils.js
+├── app.js
+├── config.js
+...
+```
+2 - Open index.html in your browser !
 
 ## ⚙ Configuration
 
