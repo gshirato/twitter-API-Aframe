@@ -1,4 +1,4 @@
-
+	
 function geneCosmos(fav, rt, followers, type)
 {
 	let theta1, theta2;
@@ -6,11 +6,12 @@ function geneCosmos(fav, rt, followers, type)
 	let score = (fav+rt) * followers /1000;
 	//generate stars
 	let scene = document.querySelector('a-scene');
+	let text = document.createElement('text');
 	let target = document.querySelector('#target');
 		theta1 = random(0,360);
 		theta2 = random(0,360);
 
-		let star = document.createElement('a-sphere');
+	let star = document.createElement('a-sphere');
 		if(type==0)
 		{
 			star.setAttribute('color','#FF0000');
@@ -19,7 +20,7 @@ function geneCosmos(fav, rt, followers, type)
 		{
 			star.setAttribute('color','#0000FF');
 		}
-		
+		text.setAttribute('value',score);
 		
 		star.setAttribute('radius',score/30);
 		let mag = 200;
@@ -39,7 +40,7 @@ function geneCosmos(fav, rt, followers, type)
 		let _z = -10 + z/mag;
 		let _str = String(_x)+ " " + String(_y)+ " " + String(_z);
 		anim.setAttribute('to',_str);
-		anim.setAttribute('repeat',1);
+		anim.setAttribute('repeat',5);
 		anim.setAttribute('dur', 1000);
 		anim.setAttribute('easing','ease-in-out');
 		anim.setAttribute('direction','normal');
@@ -60,6 +61,7 @@ function geneCosmos(fav, rt, followers, type)
 
 function setup()
 {
+
 	for(var i = 0; i < 100; i++)
 	{
 		geneCosmos(random(0,50), random(0,40), random(0,500), 0);
@@ -74,6 +76,6 @@ function setup()
 function init()
 {
 	setup();
-}
 
+}
 
