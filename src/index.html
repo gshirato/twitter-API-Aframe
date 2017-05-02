@@ -8,25 +8,20 @@
 	<script src="Utils.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
-	<script>
-		$(function(){
-			var cosm = io.connect('http://127.0.0.1:1994/cosm')
-			$('#myForm').submit(function(e){
-				//e.preventDefault();
-				cosm.json.emit('emit_from_client',{
-					ex: 3; 
-				});
-			});
-			cosm.on('efs_p',function(data){
-				$('#scene').append($('<a-sphere>').radius(data.followers));
-			});
-		});
-	</script>
+	
 	
 
 </head>
 <body>
-	
+	<script>
+		$(function(){
+			var cosm = io.connect('http://127.0.0.1:3000');
+			
+			cosm.on('message',function(data){
+				$('#scene').append($('<a-sphere>').radius(data.followers));
+			});
+		});
+	</script>
 
 <a-scene id="scene" class="sample">
 	<a-camera position="0 -3 0"></a-camera>
